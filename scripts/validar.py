@@ -4,6 +4,9 @@ import re
 import sys
 from pathlib import Path
 
+# o console do Windows (cp1252) não imprime "≤" e quebra o script
+sys.stdout.reconfigure(encoding="utf-8")
+
 raiz = Path(sys.argv[1] if len(sys.argv) > 1 else ".").resolve()
 ok = True
 
